@@ -40,7 +40,7 @@ OS value (binary)  | Arithmetic operation
 
 In any other case, no operation in carried out and output is zero. Also, consider that eventhough the corresponding button is pressed and released, the selection should be saved and performed.
 
-  * The 7-segment display is used to display both operands and result in unsigned representation. Negative numbers are accompanied by a minus sign (-) in a 7-segment digit to their left. See the figure below:
+  * The 7-segment display is used to display both operands and result in unsigned representation. Negative numbers are accompanied by a minus sign (-) in the immediate digit to their left. See the figure below as a reference (```-2 + -6 = -8```):
 
 ![7-segment display setup](img/fig01.png)
 
