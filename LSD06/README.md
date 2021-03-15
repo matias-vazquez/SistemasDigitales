@@ -68,9 +68,9 @@ Turn in a technical report including the following:
 •	Screenshots of the Terminal showing the output of your programs
 •	Conclusions
 
-## Laboratory Rubric
+## Evaluation
 
-<center>
+<div align="center">
 
 Criteria      | Weight [%]
 :-----------: | :---:
@@ -79,6 +79,6 @@ Report        | 25
 Pre-lab       | 10
 Attendance    | 5
 
-<center>
+</div>
 
 <p align="right">Last update: March 14th, 2021</p>
