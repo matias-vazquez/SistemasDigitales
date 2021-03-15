@@ -1,4 +1,4 @@
-# The Library numeric_std
+# use of library _**numeric_std**_
 
 ## Objectives
 
@@ -77,15 +77,15 @@ Operation | Expected result
 
 ## Technical report
 
-The design and implementation process should be documented in the technical report, along with the full VHDL code. Your report must include the following sections:
+The design and implementation process should be documented in the technical report, along with the full VHDL code and demonstration video. Your report must include the following sections:
 
 * Introduction
-  * Explain what you did in this laboratory. Include a brief exaplanation of each *.vhdl* file writen for your project, such as the main entity, peripheral drivers, and other components. Consider technical specifications such as the employed libraries, data types used, and other relevant information.
+  * Explain what you did in this laboratory. Include a brief explanation of each *.vhdl* file writen for your project, such as the main entity, peripheral drivers, and other components. Consider technical specifications such as the employed libraries, data types used, and other relevant information.
 * Results
-  * Link to video of the demo session
-  * Link to GitHub with the VHDL source code
   * Screenshots of the testbench timeline showing inputs and outputs for the specified operations
   * Screenshots of the working implementation on the development board
+  * Link to video of the demo session
+  * Link to GitHub with the VHDL source code
 * Individual conclusions
 
 ## Evaluation
@@ -101,4 +101,4 @@ Attendance    | 5
 
 </div>
 
-<p align="right">Last update: March 14th, 2021 by Matías Vázquez</p>
+<p align="right">Last update: March 14th</p>
