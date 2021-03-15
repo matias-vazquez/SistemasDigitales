@@ -3,22 +3,32 @@
 ## Objectives
 
 * To become familiar with the implementation of the numeric_std library in a VHDL system for arithmetic operations, by developing a simple signed 8-bit calculator.
+* To develop a VHDL testbench for design simulation 
 
 ## Pre-lab
 
-* Read the online documentation of the *numeric_std* library for VHDL and answer the following questions:
-  1. What type of signals can be declared to perform arithmetic operations using *numeric_std*?
-  2. If your design considers both, signed and unsigned numbers, which type of signal is desired to declared in such case?
-  3. What is the VHDL syntax to carry out a multiplication of two ```std_logic_vector(7 downto 0)``` signals?
+### Background on *numeric_std*
 
-* Investigate the internal wiring of a 4x4 matrix keypad, and the 
+Read the online documentation of the *numeric_std* library for VHDL and answer the following questions:
+  1. What type of signals must be used to perform arithmetic operations using *numeric_std*?
+  2. If your signed calculator design considers both, signed and unsigned numbers, which type of signal must be declared for the operands and result vectors?
+  3. Show the syntax to convert from ```std_logic_vector``` to ``signed`` and ``unsigned`` signal types, and viceversa.
+  4. Show the syntax to convert from ```integer``` to an 8-bit ```std_logic_vector``` data types, and viceversa.
+  5. Show the correct VHDL syntax to carry out a multiplication of two vectors initially defined as ```std_logic_vector(7 downto 0)``` using the *numeric_std* library?
+  
+### 4x4 Keypad Interfacing
+
+  1. Investigate the internal wiring of a 4x4 matrix keypad, and explain how to read and identify a pressed key.
+  2. Write the pseudo-code of the keypad driver. Clearly identify the inputs and outputs.
+
+draw the corresponding schematic diagram, including pull-up resistors and their values. 
 
 ## Lab work
 
-Design in VHDL a signed calculator and implement your design in the Artix 7 FPGA. Consider that only the *numeric_std* library is allowed to be called in.  Consider the following inputs and outputs:
+Design in VHDL a signed calculator and implement your design in the Artix 7 FPGA. Consider that only the *std_logic_1164* and *numeric_std* libraries are allowed to be called in.  Consider the following inputs and outputs:
 
 * Inputs
-  * Clock
+  * Clock (E3 pin from development board)
   * Operand A
   * Operand B
   * Operation selector
@@ -28,11 +38,10 @@ Design in VHDL a signed calculator and implement your design in the Artix 7 FPGA
   * 7-segment display data
   * 7-segment display enable
 
-Consider the following restrictions
-  
+Moreover, consider the following restrictions:
   
   * The calculator must carry out three basic arithmetic operations: addition, subtraction, and multiplication.
-  * Operands A and B, and the operation symbol are introduced using a 4x4 keypad connected to GPIO pin header A of the Nexys 4 DDR board
+  * Operands A and B, and the operation selection are introduced using a 4x4 keypad connected to GPIO pin header A of the Nexys 4 DDR board [see Reference Manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-4-ddr/reference-manual).
   * Negative numbers have to be introduced using two’s complement representation
   * Three more slide switches are used as operation selectors (OS) as follows:
 
@@ -48,7 +57,7 @@ In any other case, no operation in carried out and output is zero. Also, conside
 
 ![7-segment display setup](img/fig01.png)
 
-Write a Testbench for your design. 
+Write a Testbench for your calculator design. Here, set Operand A as ```x"08"```
 
 
 ## Report
