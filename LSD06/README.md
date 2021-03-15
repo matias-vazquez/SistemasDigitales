@@ -101,4 +101,4 @@ Attendance    | 5
 
 </div>
 
-<p align="right">Last update: March 14th</p>
+<p align="right">Last update: March 14th, 2021</p>
