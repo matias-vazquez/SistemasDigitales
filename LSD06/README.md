@@ -55,7 +55,9 @@ In any other case, no operation in carried out and output is zero. Also, conside
 
   * The 7-segment display is used to display both operands and result in unsigned representation. Negative numbers are accompanied by a minus sign (-) at the immediate digit to their left. See the figure below as a reference (-7 + -8 = -15):
 
-![7-segment display setup](img/fig01.png)
+<p align="center">
+  <img width=500 src="img/fig01.png">
+</p>
 
 Write a Testbench for your calculator design. Here, set Operand A as ```x"08"```
 
@@ -81,4 +83,4 @@ Attendance    | 5
 
 </div>
 
-<p align="right">Last update: March 14th, 2021</p>
+<p align="right">Last update: March 14th, 2021 by Matías Vázquez</p>
