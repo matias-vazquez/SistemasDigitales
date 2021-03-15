@@ -1,4 +1,4 @@
-# use of library _**numeric_std**_
+# Use of library _**numeric_std**_
 
 ## Objectives
 
