@@ -3,7 +3,8 @@
 ## Objectives
 
 * To become familiar with the implementation of the numeric_std library in a VHDL system for arithmetic operations, by developing a simple signed 8-bit calculator.
-* To develop a VHDL testbench for design simulation 
+* To develop a VHDL testbench for design simulation from scratch.
+* To implement a 4x4 keypad as input peripheral to the FPGA and write the corresponding driver in VHDL.
 
 ## Pre-lab
 
@@ -20,8 +21,7 @@ Read the online documentation of the *numeric_std* library for VHDL and answer t
 
   1. Investigate the internal wiring of a 4x4 matrix keypad, and explain how to read and identify a pressed key.
   2. Write the pseudo-code of the keypad driver. Clearly identify the inputs and outputs.
-
-draw the corresponding schematic diagram, including pull-up resistors and their values. 
+  3. Draw the schematic diagram of the keypad including pull-up resistors with values, and connections to the FPGA. Depict with arrows all port directions (in, out or inout) from the FPGA point of view. 
 
 ## Lab work
 
@@ -67,3 +67,18 @@ Turn in a technical report including the following:
 •	Links to YouTube with demo videos of your working code
 •	Screenshots of the Terminal showing the output of your programs
 •	Conclusions
+
+## Laboratory Rubric
+
+<center>
+
+Criteria      | Weight [%]
+:-----------: | :---:
+Demonstration | 60
+Report        | 25
+Pre-lab       | 10
+Attendance    | 5
+
+<center>
+
+<p align="right">Last update: March 14th, 2021</p>
