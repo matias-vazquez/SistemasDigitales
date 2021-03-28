@@ -2,7 +2,8 @@
 
 ## Objectives
 
-* To become familiar with the implementation of the numeric_std library in a VHDL system for arithmetic operations, by developing a simple signed 8-bit calculator.
+* To develop a basic signed 4-bit calculator
+* To become familiar with the implementation of arithmetic operations in VHDL using the numeric_std library
 * To develop a VHDL testbench for design simulation from scratch.
 * To implement a 4x4 keypad as input peripheral to the FPGA and write the corresponding driver in VHDL.
 
@@ -10,8 +11,10 @@
 
 ### Background on *numeric_std*
 
+There is a number of packages (e.g., ```STD_LOGIC_ARITH```, ```STD_LOGIC_SIGNED```, ```STD_LOGIC_UNSIGED``` AND ```NUMERIC_STD```) that VHDL offers to provide commonly-used arithmetic functions, such as addition, substraction, multiplication, division, comparison, among others. We will use ```NUMERIC_STD``` since it is an standard package available in all synthesis and simulation tools. 
+
 Read the online documentation of the *numeric_std* library for VHDL and answer the following questions:
-  1. What type of signals must be used to perform arithmetic operations using *numeric_std*?
+  1. What type of signals must be used to perform arithmetic operations using *numeric_std*, and how are they declared?
   2. If your signed calculator design considers both, signed and unsigned numbers, which type of signal must be declared for the operands and result vectors?
   3. Show the syntax to convert from ```std_logic_vector``` to ``signed`` and ``unsigned`` signal types, and viceversa.
   4. Show the syntax to convert from ```integer``` to an 8-bit ```std_logic_vector``` data types, and viceversa.
