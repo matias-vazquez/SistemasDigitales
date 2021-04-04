@@ -30,15 +30,26 @@ Complete the steps below:
 
 ## Lab procedure
 
-### Excercise 1
+### **Excercise 1. 8-bit Bidirectional Shift Register Implementation**
+Based on the 74LS194 description below, an from your reading of the datasheet, design an 8-bit  bidirectional shift register. For this, begin by writing the RTL logic corresponding to the 74LS194 IC and then use two instances of it for your final design. 
+
+<div align="center">
+
+<img width=400, src=img/ex01.png>
+
+</div>
+
 Port | Description
 :--- | :---
 CLRN | Active low, asynchronous input. When active, the rest of inputs are ignored and Q outputs are 0
 D1-D4 | Data inputs. These bits are loaded in parallel to the register when S1=1 and S0=1
-Q1-Q4 | Data outputs
-S0, S1 | Control inputs. Depending upon their state, the shift register acts consequently
-SR, SL | Direction bits. Shift right and shift left, respectively
-
+Q1-Q4 | Shifting data outputs.
+S0, S1 | Control inputs. Depending upon their state, the shift register acts in consequence. 
+→ S0=1 S1=1 | Register is loaded in pararell with contents of D1-D4
+→ S0=0 S1=1 | Register is right-shifted and SR is loaded into Q3
+→ S0=1 S1=0 | Register is left-shifted and SL is loaded into Q0
+→ S1=0 S0=0 | No action
+SR, SL | Direction bits. **S**hift **R**ight and **S**hift **L**eft, respectively
 ## Report
 
 ## Evaluation
