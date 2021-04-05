@@ -76,7 +76,7 @@ Port | Description
 
 4. Change the settings, so this time, the pre-loaded byte is continuously right-shifted at 5 Hz.
 
-### **Exercise 2. BCD Up/Down Counter**[![Generic badge](https://img.shields.io/badge/GITHUB-REPO-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/SCREEN-CAPTURE-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/DEMO-VIDEO-blue.svg)](https://experiencia21.tec.mx/)
+### **Exercise 2. BCD Up/Down Counter** [![Generic badge](https://img.shields.io/badge/GITHUB-REPO-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/SCREEN-CAPTURE-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/DEMO-VIDEO-blue.svg)](https://experiencia21.tec.mx/)
 1. Based on the 74LS169 description below, an from your reading of the datasheet, design a bidirectional BCD counter from 00 to 99 and viceversa. For this, begin by writing the RTL logic corresponding to the 74LS169 IC and then use two instances of it in your main entity. The resulting entity is shown in the figure below:
 
 <div align="center">
