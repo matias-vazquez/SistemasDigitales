@@ -4,7 +4,7 @@
 <!--- https://naereen.github.io/badges/ --->
 </div>
 
-# Lab 7. Design of Counters and Shift Registers (draft)
+# Lab 7. Design of Counters and Shift Registers
 
 ## Contents
 * [Objectives](#objectives)
@@ -47,8 +47,8 @@ Complete the steps below:
 
 ## Lab procedure
 
-### **Exercise 1. 8-bit Bidirectional Shift Register**
-1. Based on the 74LS194 description below, an from your readings on the datasheet, design an 8-bit  bidirectional shift register in VHDL. For this, begin by writing the RTL logic corresponding to the 74LS194 IC and then use two instances of it in your main entity. an unconnected block diagram of your entity is shown in the figure below: [![Generic badge](https://img.shields.io/badge/GITHUB-REPO-blue.svg)](https://experiencia21.tec.mx/) 
+### **Exercise 1. 8-bit Bidirectional Shift Register** [![Generic badge](https://img.shields.io/badge/GITHUB-REPO-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/SCREEN-CAPTURE-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/DEMO-VIDEO-blue.svg)](https://experiencia21.tec.mx/)
+1. Based on the 74LS194 description below, an from your readings on the datasheet, design an 8-bit  bidirectional shift register in VHDL. For this, begin by writing the RTL logic corresponding to the 74LS194 IC and then use two instances of it in your main entity. an unconnected block diagram of your entity is shown in the figure below: 
 
 <div align="center">
 
@@ -70,14 +70,14 @@ Port | Description
 → `S1=0 S0=0` | No action
 `SR, SL` | Direction bits. **S**hift **R**ight and **S**hift **L**eft, respectively
 
-2. Once you entity is ready, create the constraints file to map the `D0-D7`, `S0` and `S1` to ten slide-switches for parallel loading and shifting control; `SR`, `SL`, `CLR` to three push-buttons; and finally, the `Q0-Q7` outputs to eight LEDs on the development board. [![Generic badge](https://img.shields.io/badge/GITHUB-REPO-blue.svg)](https://experiencia21.tec.mx/) 
+2. Once you entity is ready, create the constraints file to map the `D0-D7`, `S0` and `S1` to ten slide-switches for parallel loading and shifting control; `SR`, `SL`, `CLR` to three push-buttons; and finally, the `Q0-Q7` outputs to eight LEDs on the development board.
 
-3. Setup your shift register to carry out a continuous left shifting sequence starting with a pre-loaded 8-bit value from `D0-D7`, and at a 5 Hz pace. [![Generic badge](https://img.shields.io/badge/SCREEN-CAPTURE-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/DEMO-VIDEO-blue.svg)](https://experiencia21.tec.mx/)
+3. Setup your shift register to carry out a continuous left shifting sequence starting with a pre-loaded 8-bit value from `D0-D7`, and at a 5 Hz pace.
 
-4. Change the settings, so this time, the pre-loaded byte is continuously right-shifted at 5 Hz. [![Generic badge](https://img.shields.io/badge/SCREEN-CAPTURE-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/DEMO-VIDEO-blue.svg)](https://experiencia21.tec.mx/)
+4. Change the settings, so this time, the pre-loaded byte is continuously right-shifted at 5 Hz.
 
-### **Exercise 2. BCD Up/Down Counter**
-1. Based on the 74LS169 description below, an from your reading of the datasheet, design a bidirectional BCD counter from 00 to 99 and viceversa. For this, begin by writing the RTL logic corresponding to the 74LS169 IC and then use two instances of it in your main entity. The resulting entity is shown in the figure below: [![Generic badge](https://img.shields.io/badge/GITHUB-REPO-blue.svg)](https://experiencia21.tec.mx/) 
+### **Exercise 2. BCD Up/Down Counter**[![Generic badge](https://img.shields.io/badge/GITHUB-REPO-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/SCREEN-CAPTURE-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/DEMO-VIDEO-blue.svg)](https://experiencia21.tec.mx/)
+1. Based on the 74LS169 description below, an from your reading of the datasheet, design a bidirectional BCD counter from 00 to 99 and viceversa. For this, begin by writing the RTL logic corresponding to the 74LS169 IC and then use two instances of it in your main entity. The resulting entity is shown in the figure below:
 
 <div align="center">
 
@@ -96,11 +96,11 @@ Port | Description
 `Q0-Q3` | Flip-flop outputs. Maximum value should be 9 and minimum should be 0. 
 `TC`    | **T**erminal **C**ount output (active low). Active when counter reaches 0x9 on Count Up mode, and when reaches 0x0 on Count Down mode. 
 
-2. Once you entity is ready, create the constraints file to map the `D0-D7` to eight slide-switches for parallel loading: 4 for units and 4 for tens. Additionally, connect `CEP`, `CET`, `PE` and `U/D` to other four slide-switches for counting control. Finally, connect `Q0-Q8` outputs to two 7-segment displays on the development board through your previously developed BCD to 7-segment encoder. [![Generic badge](https://img.shields.io/badge/GITHUB-REPO-blue.svg)](https://experiencia21.tec.mx/) 
+2. Once you entity is ready, create the constraints file to map the `D0-D7` to eight slide-switches for parallel loading: 4 for units and 4 for tens. Additionally, connect `CEP`, `CET`, `PE` and `U/D` to other four slide-switches for counting control. Finally, connect `Q0-Q8` outputs to two 7-segment displays on the development board through your previously developed BCD to 7-segment encoder.
 
-3. Setup your counter to carry out a continuous upcount starting from 00 up to 99, on a 5 Hz pace. [![Generic badge](https://img.shields.io/badge/SCREEN-CAPTURE-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/DEMO-VIDEO-blue.svg)](https://experiencia21.tec.mx/)
+3. Setup your counter to carry out a continuous upcount starting from 00 up to 99, on a 5 Hz pace.
 
-4. Change the settings, this time for a continuous count down from 99 to 00 at a 5 Hz pace. [![Generic badge](https://img.shields.io/badge/SCREEN-CAPTURE-blue.svg)](https://experiencia21.tec.mx/)[![Generic badge](https://img.shields.io/badge/DEMO-VIDEO-blue.svg)](https://experiencia21.tec.mx/)
+4. Change the settings, this time for a continuous count down from 99 to 00 at a 5 Hz pace.
 
 ## Technical report
 
@@ -116,8 +116,8 @@ The design and implementation process should be documented in the technical repo
   * Link to GitHub with the VHDL source code
 * Individual conclusions
   * Intepretation of results
-  * Applications of and improvements in the exercises
-  * Justification for any errors
+  * Applications of and improvements of exercises
+  * Justification in case of any errors
 <div align="center">
 
 [![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://experiencia21.tec.mx/)
