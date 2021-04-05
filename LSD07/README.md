@@ -112,6 +112,12 @@ The design and implementation process should be documented in the technical repo
   * Link to GitHub with the VHDL source code
 * Individual conclusions
 
+<div align="center">
+
+[![forthebadge](https://forthebadge.com/images/badges/fuck-it-ship-it.svg)](https://experiencia21.tec.mx/)
+
+</div>
+
 ## Evaluation
 
 <div align="center">
@@ -125,10 +131,13 @@ Attendance    | 5
 
 </div>
 
-<p align="right">Last updated: June 4, 2021</p>
+<div align="right">
+
+Last updated: June 4, 2021 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+
+</div>
 
 <div align="right">
 
-[![forthebadge](https://forthebadge.com/images/badges/fixed-bugs.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/made-with-markdown.svg)](https://forthebadge.com)
 </div>
