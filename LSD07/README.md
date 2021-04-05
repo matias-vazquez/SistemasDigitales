@@ -12,7 +12,7 @@
 * [Lab procedure](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#lab-procedure)
   * [Exercise 1. 8-bit Bidirectional Shift Register Implementation](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#exercise-1-8-bit-bidirectional-shift-register-implementation)
   * [Exercise 2. BCD Up/Down Counter](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#exercise-2-bcd-updown-counter)
-* [Technical report](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#report)
+* [Technical report](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#technical-report)
 * [Evaluation](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#evaluation)
 
 ## Objectives
@@ -125,7 +125,7 @@ Attendance    | 5
 
 </div>
 
-<p align="right">Last update: June 4th, 2021</p>
+<p align="right">Last updated: June 4, 2021</p>
 
 <div align="right">
 
