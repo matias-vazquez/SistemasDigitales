@@ -115,7 +115,7 @@ The design and implementation process should be documented in the technical repo
   * Link to video of the demo session
   * Link to GitHub with the VHDL source code
 * Individual conclusions
-  * Intepretation of results
+  * Interpretation of results
   * Applications of and improvements of exercises
   * Justification in case of any errors
 <div align="center">
