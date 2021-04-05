@@ -1,4 +1,19 @@
+<div align="right">
+
+[![Support Server](https://img.shields.io/discord/591914197219016707.svg?color=7289da&label=ComputaciónTEC&logo=discord&style=flat-square)](https://discord.gg/xfB33VMq)
+<!--- https://naereen.github.io/badges/ --->
+</div>
+
 # Lab 7. Design of Counters and Shift Registers (draft)
+
+## Contents
+* [Objectives](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#objectives)
+* [Pre-lab work](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#pre-lab-work)
+* [Lab procedure](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#lab-procedure)
+  * [Exercise 1. 8-bit Bidirectional Shift Register Implementation](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#exercise-1-8-bit-bidirectional-shift-register-implementation)
+  * [Exercise 2. BCD Up/Down Counter](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#exercise-2-bcd-updown-counter)
+* [Technical report](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#report)
+* [Evaluation](https://github.com/matias-vazquez/SistemasDigitales/tree/main/LSD07#evaluation)
 
 ## Objectives
 To use a HDL to implement by software two specific-purpose and commercially-available digital integrated circuits in a FPGA: the 74LS194 (4-Bit Bidirectional Universal Shift Register) and the 74LS169 (4-bit Up/Down Binary Synchronous Counter). For this, the specific objectives of this laboratory are
@@ -79,13 +94,41 @@ U/D   | Up/Down count control input. High=Count up, Low=Count down
 Q0-Q3 | Flip-flop outputs. Maximum value should be 9 and minimum should be 0. 
 TC    | **T**erminal **C**ount output (active low). Active when counter reaches 0x9 on Count Up mode, and when reaches 0x0 on Count Down mode. 
 
-2. Once you entity is ready, create the constraints file to map the D0-D7 to eight slide-switches for parallel loading: 4 for units and 4 for decens. Additionally, connect CEP, CET, PE and U/D to other four slide-switches for counting control. Finally, connect Q0-Q8 outputs to two 7-segment displays on the development board through the previously developed encoder.
+2. Once you entity is ready, create the constraints file to map the D0-D7 to eight slide-switches for parallel loading: 4 for units and 4 for decens. Additionally, connect CEP, CET, PE and U/D to other four slide-switches for counting control. Finally, connect Q0-Q8 outputs to two 7-segment displays on the development board through your previously developed BCD to 7-segment encoder.
 
 3. Setup your counter to carry out a continuous upcount starting from 00 up to 99, on a 5 Hz pace. 
 
 4. Change the settings, this time for a continuous count down from 99 to 00 at a 5 Hz pace.
 
-## Report
+## Technical report
+
+The design and implementation process should be documented in the technical report, along with the full VHDL code and demonstration video. Your report must include the following sections:
+
+* Introduction
+  * Explain what you did in this laboratory. Include a brief explanation of each *.vhdl* file writen for your project, such as the main entity, peripheral drivers, and other components. Consider technical specifications such as the employed libraries, data types used, and other relevant information.
+* Results
+  * Screenshots of the working implementation on the development board
+  * Link to video of the demo session
+  * Link to GitHub with the VHDL source code
+* Individual conclusions
 
 ## Evaluation
 
+<div align="center">
+
+Criteria      | Weight [%]
+:-----------: | :---:
+Demonstration | 60
+Report        | 25
+Pre-lab       | 10
+Attendance    | 5
+
+</div>
+
+<p align="right">Last update: June 4th, 2021</p>
+
+<div align="right">
+
+[![forthebadge](https://forthebadge.com/images/badges/fixed-bugs.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-markdown.svg)](https://forthebadge.com)
+</div>
