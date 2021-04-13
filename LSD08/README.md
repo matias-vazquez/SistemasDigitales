@@ -27,7 +27,7 @@ _Shaft position_ | _Clock cycle count_ | _PWM duty cycle_
 180&deg; | 250,000 | 12.5% [2.5 ms]
 </div>
 
-4. Given the following VHDL code for PWM signal generation, determine which line you need to change to position the shaft of the servo motor on 0&deg;, 45&deg;, 90&deg;, 135&deg; and 180&deg;. Add a column to the table above showing the corresponding VHDL line that accomplishes such shaft positioning. 
+5. Given the following VHDL code for PWM signal generation, determine which line you need to change to position the shaft of the servo motor on 0&deg;, 45&deg;, 90&deg;, 135&deg; and 180&deg;. Add a column to the table above showing the corresponding VHDL line that accomplishes such shaft positioning. 
 
 ```vhdl
 library IEEE;
