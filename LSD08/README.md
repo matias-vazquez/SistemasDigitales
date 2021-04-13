@@ -1,4 +1,8 @@
-# PWM Signal Generation (draft)
+<div align="right">
+   <img src="img/teclogo.png">
+</div>
+
+# PWM Signal Generation
 
 ## Objectives
 
@@ -6,10 +10,96 @@
 * To drive a servomotor at different shaft positions through HDL-generated PWM signals 
 
 ## Pre-lab work
-
+Answer the following questions:
 1. What is Pulse Width Modulation?
-2. Design a VHDL component with an input clock signal of 100 MHz, and an output signal with a 50 Hz (20 ms period), 1.5 ms work cycle, as the one shown below:
+2. How the shaft position of a servo motor is related to the pulse width of a PWM signal? Give some examples for any servo motor you find online. 
+2. By hand, draw three PWM signals with a period of 20 ms and duty cycles of 10%, 50% and 90%. In miliseconds, what is the corresponding **active** time (_e.g._ PWM = `1`) for each signal? 
+3. The following table shows the __*Position vs. PWM duty cycle*__ of the SG-5010 servo motor, where, for a particular __*Shaft position*__, an specific PWM __*PWM duty cycle*__ is required, which is achieved by keeping the PWM signal high by a determined amount of clock cycles (__*Clock cycle count*__) for a 100 MHz clock frequency. 
 
+<div align="center">
+
+_Shaft position_ | _PWM duty cycle_ | _Clock cycle count (100 MHz)_ 
+:---: | :---: | :---:
+0&deg; | 50,000 | 0.5 ms
+45&deg; | 100,000 | 1 ms
+90&deg; | 150,000 | 1.5 ms
+135&deg; | 200,000 | 2 ms
+180&deg; | 250,000 | 2.5 ms
+</div>
+
+4. Given the following VHDL code for PWM signal generation, determine which line you need to change to position the shaft of the servo motor on 0&deg;, 45&deg;, 90&deg;, 135&deg; and 180&deg;. Add a column to the table above showing the corresponding VHDL line that accomplishes such shaft positioning. 
+
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity main_pwm is  
+port (
+    clk100m : in std_logic;
+    btn_in  : in std_logic;
+    pwm_out : out std_logic
+);
+end main_pwm;
+
+architecture Behavioral of main_pwm is
+
+subtype u20 is unsigned(19 downto 0);
+signal counter      : u20 := x"00000";
+
+constant clk_freq   : integer := 100_000_000;       -- Clock frequency in Hz (10 ns)
+constant pwm_freq   : integer := 50;                -- PWM signal frequency in Hz (20 ms)
+constant period     : integer := clk_freq/pwm_freq; -- Clock cycle count per PWM period
+constant duty_cycle : integer := 50_000;            -- Clock cycle count per PWM duty cycle
+
+signal pwm_counter  : std_logic := '0';
+signal stateHigh    : std_logic := '1';
+
+signal clk50m       : std_logic;
+signal reset        : std_logic;
+signal locked       : std_logic;
+
+component clock port (-- Clock in ports
+  -- Clock out ports
+  clk50m          : out    std_logic;
+  -- Status and control signals
+  reset             : in     std_logic;
+  locked            : out    std_logic;
+  clk_in1           : in     std_logic
+ );
+end component;
+
+begin
+
+clock_instance : clock port map ( 
+  -- Clock out ports  
+   clk50m => clk50m,
+  -- Status and control signals                
+   reset => reset,
+   locked => locked,
+   -- Clock in ports
+   clk_in1 => clk100m );
+ 
+pwm_generator : process(clk50m) is
+variable cur : u20 := counter;
+begin
+    if (rising_edge(clk50m) and btn_in = '1') then
+        cur := cur + 1;  
+        counter <= cur;
+        if (cur <= duty_cycle) then
+            pwm_counter <= '1'; 
+        elsif (cur > duty_cycle) then
+            pwm_counter <= '0';
+        elsif (cur = period) then
+            cur := x"00000";
+        end if;  
+    end if;
+end process pwm_generator;
+
+pwm_out <= pwm_counter;
+
+end Behavioral;
+```
 ## Lab work
 
 1. Design in VHDL a servomotor driver to control the motor shaft on 5 different positions. For this, your entity must have the following ports:
@@ -37,7 +127,7 @@ Signal | Length | Comments
 
 2. Account for the following restrictions in your design:
    * Use the _numeric bit_ library
-   * The initial position is 0. An input pulse in `POS` by the push-button moves the shaft to 45. Subsequent button pulses move the shaft to 90, 135, 180, and back to 0 
+   * The initial position is 0&deg;. An input pulse in `POS` by the push-button moves the shaft to 45&deg;. Subsequent button pulses move the shaft to 90&deg;, 135&deg;, 180&deg;, and back to 0&deg; 
    * The 7-segment displays shows the angle position of the motors shaft
    * Play the following video to show the expected behavior:
 
@@ -49,15 +139,9 @@ Signal | Length | Comments
 ## Deliverables
 The design and implementation process should be documented in the technical report, along with the full VHDL code and a demonstration video (3 minutes maximum). Your report must include the following sections:
 
-<div>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WJTofpTIy2Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-</div>
-
 1. Introduction
    * Explain what you did in this laboratory.
-   * Include a brief explanation of each .vhdl file writen for your project, such as the main entity, lower hierarchy RTL descriptions, peripheral drivers, and other relevant components (consider technical specifications such as the included libraries, data types used, and further relevant information)
+   * Include a brief explanation of each _.vhdl_ file wrirten for your project (_e.g.,_ main entity, lower hierarchy RTL descriptions, peripheral drivers, etc.). Consider technical specifications such as the included libraries, data types used, and other relevant information.
 2. Results
    * Screenshots of the working implementation on the development board
    * Link to video of the demo session
@@ -65,7 +149,7 @@ The design and implementation process should be documented in the technical repo
 3. Individual conclusions
    * Interpretation of results
    * Applications of and improvements of exercises
-   *Justification in case of any errors
+   * Justification in case of any errors
 
 ## Evaluation
 <div align="center">
