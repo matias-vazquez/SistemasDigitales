@@ -59,31 +59,12 @@ signal clk50m       : std_logic;
 signal reset        : std_logic;
 signal locked       : std_logic;
 
-component clock port (-- Clock in ports
-  -- Clock out ports
-  clk50m          : out    std_logic;
-  -- Status and control signals
-  reset             : in     std_logic;
-  locked            : out    std_logic;
-  clk_in1           : in     std_logic
- );
-end component;
-
 begin
 
-clock_instance : clock port map ( 
-  -- Clock out ports  
-   clk50m => clk50m,
-  -- Status and control signals                
-   reset => reset,
-   locked => locked,
-   -- Clock in ports
-   clk_in1 => clk100m );
- 
-pwm_generator : process(clk50m) is
+pwm_generator : process(clk100m) is
 variable cur : u20 := counter;
 begin
-    if (rising_edge(clk50m) and btn_in = '1') then
+    if (rising_edge(clk100m) and btn_in = '1') then
         cur := cur + 1;  
         counter <= cur;
         if (cur <= duty_cycle) then
