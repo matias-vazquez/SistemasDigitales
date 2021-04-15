@@ -55,10 +55,6 @@ constant duty_cycle : integer := 50_000;            -- Clock cycle count per PWM
 signal pwm_counter  : std_logic := '0';
 signal stateHigh    : std_logic := '1';
 
-signal clk50m       : std_logic;
-signal reset        : std_logic;
-signal locked       : std_logic;
-
 begin
 
 pwm_generator : process(clk100m) is
