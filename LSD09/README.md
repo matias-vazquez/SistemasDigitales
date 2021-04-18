@@ -21,9 +21,9 @@ The following table shows the pinout for a 16x2 matrix LCD display.
 
 <div align="center">
 
-<img src="img/instructions.png">
+<img width="500" src="img/instructions.png">
 
-<div>
+</div>
 
 2. Check Table 6 on page 24 of the LCD display driver instruction set. 
 
