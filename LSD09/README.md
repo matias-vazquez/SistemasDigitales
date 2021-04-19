@@ -53,9 +53,9 @@ Display data RAM (DDRAM)
 
 ## Lab procedure
 
-1. Write in VHDL the initialization sequence for the LCD display following the requirements from the pre-lab work. 
+1. Write in VHDL the initialization sequence for the LCD display following the requirements from the pre-lab work using Finite State Machines. 
 
-2. Write in VHDL LCD write code to display the team members' first name on each line of the LCD display. 
+2. Write in VHDL LCD write code to display the team members' first name on each line of the LCD display using Finite State Machines. 
 
 ## Deliverables
 The design and implementation process should be documented in the technical report, along with the full VHDL code and a demonstration video (3 minutes maximum). Your report must include the following sections:
@@ -87,6 +87,6 @@ Demonstration | 60%
 
 <div>
 
-<img src="img/instructions.png">
+<img width="650" src="img/instructions.png">
 
 </div>
