@@ -53,9 +53,21 @@ Display data RAM (DDRAM)
 
 ## Lab procedure
 
-1. Write in VHDL the initialization sequence for the LCD display following the requirements from the pre-lab work using Finite State Machines. 
+1. Wire up the LCD display to the Nexys 4 DDR board following the connection table below:
 
-2. Write in VHDL LCD write code to display the team members' first name on each line of the LCD display using Finite State Machines. 
+<div align="center">
+
+LCD Display | Nexys 4 DDR
+:--- | :---
+Data bus (__D0:7__) | __JA__ (1:4,7:10) [`C17, D18, E18, G17, D17, E17, F18, G18`]
+Register select (__RS__) | __JB1__ [`D14`] 
+Read/Write (__R/W__) | __JB2__ [`F16`]
+Enable (__E__) | __JB3__ [`G16`]
+</div>
+
+2. Write in VHDL the initialization sequence for the LCD display following the requirements from the pre-lab work using Finite State Machines. 
+
+3. Write in VHDL LCD write code to display the team members' first name on each line of the LCD display using Finite State Machines. 
 
 ## Deliverables
 The design and implementation process should be documented in the technical report, along with the full VHDL code and a demonstration video (3 minutes maximum). Your report must include the following sections:
