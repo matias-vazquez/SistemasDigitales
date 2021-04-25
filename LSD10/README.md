@@ -18,8 +18,7 @@ To design a VGA controller using HDL through synchronization signals generation.
 
   4. What pixel frequency is required to generate for a 640x480 screen resolution with a 60 Hz refresh rate?
 
-* _Horizontal Sync_ and _Vertical Sync_ signal generation
-  1. How could you generate _Horizontal Sync_ and _Vertical Sync_ signals using the Nexys 4 DDR board. Write the corresponding VHDL code. 
+  5. Using your pixel frequency calculation, write the VHDL code to generate _Horizontal Sync_ (`HS`) and _Vertical Sync_ (`VS`) signals.   
 
 ## Lab procedure
 
@@ -42,36 +41,38 @@ Outputs | Length | Properties
 `ROW` | [10 bits]
 </div>
 
-`HS` and `VS` signals
+Use as a reference the `HS` and `VS` signals shown below:
 <div align="center">
 <img src="img/HSVS.png">
 </div>
 
-`VIDEO_ON_H` and `VIDEO_ON_V` signals
+`VIDEO_ON = VIDEO_ON_H AND VIDEO_ON_V`
 <div align="center">
 <img src="img/VIDEO_ON.png">
 </div>
 
-`VIDEO_ON = VIDEO_ON_H AND VIDEO_ON_V`
-
 2. Write a testbench to carry out a simulation stage for signal verification (`HS` and `VS` meet the timming criteria described in Reference Manual) before downloading your driver to the Nexys 4 board. 
 
-3. Once the signals are verified on simulation, use an oscilloscope to verify the generated signals on the VGA port of the development board.
+__ROW SIGNAL__
 
-4. __ROW SIGNAL__. The timeline below shows a full period of `VS` signal, in which the count ranges from 0 to 520. 
+The timeline below shows a full period of `VS` signal, in which the count ranges from 0 to 520. 
 
 <div align="center">
 <img src="img/row1.png">
 <img src="img/row2.png">
 </div>
 
-5. __COLUMN SIGNAL__. Then, the following timeline shows a full period of `HS` signal, with count ranging from 0 to 799. 
+__COLUMN SIGNAL__
+
+Then, the following timeline shows a full period of `HS` signal, with count ranging from 0 to 799. 
 
 <div align="center">
 <img src="img/column1.png">
 <img src="img/column2.png">
 <img src="img/column3.png">
 </div>
+
+3. Once the signals are verified on simulation, use an oscilloscope to verify the generated signals on the VGA port of the development board.
 
 ### __Part II. VGA Display Testing__
 
@@ -81,7 +82,7 @@ Outputs | Length | Properties
 <img width="460" src="img/pattern1.png">
 </div>
 
-7. Show on the display the EBU colorbars, as shown below:
+7. Show on the display the EBU colorbars, going from white through black, as shown below:
 
 <div align="center">
 <img width="400" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/EBU_Colorbars.svg/768px-EBU_Colorbars.svg.png">
